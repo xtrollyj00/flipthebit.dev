@@ -1,0 +1,21 @@
+.dynamic-image img {
+  display: none;
+}
+html[data-theme="light"] .dynamic-image .light-mode-img {
+  display: block;
+}
+html[data-theme="dark"] .dynamic-image .dark-mode-img {
+  display: block;
+}
+
+/* Fallback: auto theme with prefers-color-scheme */
+@media (prefers-color-scheme: light) {
+  html[data-theme="auto"] .dynamic-image .light-mode-img {
+    display: block;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  html[data-theme="auto"] .dynamic-image .dark-mode-img {
+    display: block;
+  }
+}

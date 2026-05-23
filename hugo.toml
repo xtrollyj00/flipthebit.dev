@@ -1,0 +1,21 @@
+baseURL = 'https://flipthebit.dev/'
+locale = 'en-us'
+title = 'Flip The Bit'
+copyright = "fpgahero.com (CC BY-SA 4.0)"
+theme = "PaperMod"
+enableEmoji = true
+enableRobotsTXT = true
+enableInlineShortcodes = true
+
+[params]
+  mainSections = []
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowBreadCrumbs = true
+  ShareButtons = ["linkedin", "twitter", "reddit"]
+  [params.contact]
+    email = "flipthebit@proton.me"
+
+[markup]
+[markup.highlight]
+noClasses = false

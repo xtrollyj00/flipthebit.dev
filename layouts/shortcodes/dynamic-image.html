@@ -1,0 +1,18 @@
+{{ $lightSrc := .Get "light"}}
+{{ $darkSrc := .Get "dark"}}
+{{ $alt := .Get "alt" }}
+{{ $class := .Get "class" }}
+{{ $style := .Get "style" }}
+
+{{/* Resolve page-bundle resources if paths are relative */}}
+{{ $lightRes := .Page.Resources.GetMatch $lightSrc }}
+{{ $darkRes := .Page.Resources.GetMatch $darkSrc }}
+{{ $lightURL := cond (ne $lightRes nil) $lightRes.RelPermalink $lightSrc }}
+{{ $darkURL := cond (ne $darkRes nil) $darkRes.RelPermalink $darkSrc }}
+
+<div class="dynamic-image {{ $class }}" style="{{ $style }}">
+  <center>
+    <img src="{{ $lightURL }}" alt="{{ $alt }}" class="light-mode-img">
+    <img src="{{ $darkURL }}" alt="{{ $alt }}" class="dark-mode-img">
+  </center>
+</div>
