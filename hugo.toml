@@ -7,6 +7,9 @@ enableEmoji = true
 enableRobotsTXT = true
 enableInlineShortcodes = true
 
+defaultContentLanguageInSubdir = false
+DefaultContentLanguage = "en"
+
 [params]
   comments = true
   mainSections = []
@@ -20,6 +23,14 @@ enableInlineShortcodes = true
 [markup]
 [markup.highlight]
 noClasses = false
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+  [languages.sk]
+    languageName = "Slovenčina"
+    weight = 2
 
 [caches]
   [caches.images]
