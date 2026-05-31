@@ -1,8 +1,10 @@
-{{ $lightSrc := .Get "light"}}
-{{ $darkSrc := .Get "dark"}}
+{{ $lightSrc := .Get "light" }}
+{{ $darkSrc := .Get "dark" }}
 {{ $alt := .Get "alt" }}
 {{ $class := .Get "class" }}
 {{ $style := .Get "style" }}
+{{ $width := .Get "width" }}
+{{ $height := .Get "height" }}
 
 {{/* Resolve page-bundle resources if paths are relative */}}
 {{ $lightRes := .Page.Resources.GetMatch $lightSrc }}
@@ -12,7 +14,7 @@
 
 <div class="dynamic-image {{ $class }}" style="{{ $style }}">
   <center>
-    <img src="{{ $lightURL }}" alt="{{ $alt }}" class="light-mode-img">
-    <img src="{{ $darkURL }}" alt="{{ $alt }}" class="dark-mode-img">
+    <img src="{{ $lightURL }}" alt="{{ $alt }}" class="light-mode-img" style="{{ with $width }}width: {{ . }};{{ end }}{{ with $height }} height: {{ . }};{{ end }}">
+    <img src="{{ $darkURL }}" alt="{{ $alt }}" class="dark-mode-img" style="{{ with $width }}width: {{ . }};{{ end }}{{ with $height }} height: {{ . }};{{ end }}">
   </center>
 </div>
