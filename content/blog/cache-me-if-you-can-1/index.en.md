@@ -1,6 +1,8 @@
 ---
-title: "Cache me if you can #1: An intro to what caches are and why you need one"
+title: "Cache me if you can #1: What is a cache and why you need one"
 date: "2024-11-26"
+description: "Learn what a CPU cache is and why memory systems need one, covering data locality and fully associative, direct-mapped, and set-associative cache designs."
+slug: "what-is-a-cache"
 tags:
   - "Cache me if you can"
   - "data locality"

@@ -1,6 +1,8 @@
 ---
-title: "Cache me if you can #1: Úvod ku cache a prečo ju potrebujete"
+title: "Cache me if you can #1: Čo je cache a prečo ju potrebujete"
 date: "2024-11-26"
+description: "Zistite, čo je CPU cache a prečo ju potrebujú pamäťové systémy. O dátovej lokalite a o plne asociatívnej, priamo mapovanej a množinovo asociatívnej cache."
+slug: "co-je-cache"
 tags:
   - "Cache me if you can"
   - "data locality"
