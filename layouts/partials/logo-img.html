@@ -1,0 +1,17 @@
+{{- $icon := .icon }}
+{{- $height := .height | default "30" }}
+{{- $class := .class }}
+{{- $img := resources.Get $icon }}
+{{- if $img }}
+    {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
+    {{- if hugo.IsExtended -}}
+        {{- $processableFormats = $processableFormats | append "webp" -}}
+    {{- end -}}
+    {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
+    {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true) }}
+        {{- $img = $img.Resize (printf "x%s" $height) }}
+    {{- end }}
+    <img class="{{ $class }}" src="{{ $img.Permalink }}" alt="" aria-label="logo" height="{{ $height }}">
+{{- else }}
+    <img class="{{ $class }}" src="{{ $icon | absURL }}" alt="" aria-label="logo" height="{{ $height }}">
+{{- end -}}

@@ -13,14 +13,30 @@ DefaultContentLanguage = "en"
 
 [params]
   comments = true
-  mainSections = []
+  mainSections = ["blog"]
   ShowReadingTime = true
   ShowShareButtons = true
   ShowBreadCrumbs = true
   ShareButtons = ["linkedin", "twitter", "reddit"]
   images = ["images/twitter_card.png"]
+  ShowPostNavLinks = true
+  ShowAllPagesInArchive = true
   [params.contact]
     email = "flipthebit@proton.me"
+
+[params.label]
+text = " "
+icon = "logo-light.png"
+iconDark = "logo-dark.png"
+
+[params.homeInfoParams]
+  Title = ""
+  Content = "FPGA engineer with a soft spot for low-level programming and a mild grudge against web tech. Latest thoughts below 👇"
+  imageUrl = "logo-light.png"
+  imageUrlDark = "logo-dark.png"
+  imageTitle = "Flip the Bit logo"
+  imageHeight = 60
+  imageWidth = 396
 
 [markup]
 [markup.highlight]

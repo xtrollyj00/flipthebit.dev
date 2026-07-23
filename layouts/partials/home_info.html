@@ -1,0 +1,70 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
+        {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
+        {{- if hugo.IsExtended -}}
+            {{- $processableFormats = $processableFormats | append "webp" -}}
+        {{- end -}}
+
+        {{- if .imageUrl }}
+        {{- $img := "" }}
+        {{- if not (urls.Parse .imageUrl).IsAbs }}
+            {{- $img = resources.Get .imageUrl }}
+        {{- end }}
+        {{- if $img }}
+            {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
+                {{- if (not (and (not .imageHeight) (not .imageWidth))) }}
+                    {{- $img = $img.Resize (printf "%dx%d" .imageWidth .imageHeight) }}
+                {{- else if .imageHeight }}
+                    {{- $img = $img.Resize (printf "x%d" .imageHeight) }}
+                {{- else if .imageWidth }}
+                    {{- $img = $img.Resize (printf "%dx" .imageWidth) }}
+                {{- else }}
+                    {{- $img = $img.Resize "80x80" }}
+                {{- end }}
+            {{- end }}
+            <img class="home-info-logo logo-light" draggable="false" src="{{ $img.Permalink }}" alt="{{ .imageTitle | default "logo" }}" title="{{ .imageTitle }}"
+                height="{{ .imageHeight | default 80 }}" width="{{ .imageWidth | default 80 }}" />
+        {{- else }}
+        <img class="home-info-logo logo-light" draggable="false" src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default "logo" }}" title="{{ .imageTitle }}"
+            height="{{ .imageHeight | default 80 }}" width="{{ .imageWidth | default 80 }}" />
+        {{- end }}
+        {{- end }}
+
+        {{- if .imageUrlDark }}
+        {{- $imgD := "" }}
+        {{- if not (urls.Parse .imageUrlDark).IsAbs }}
+            {{- $imgD = resources.Get .imageUrlDark }}
+        {{- end }}
+        {{- if $imgD }}
+            {{- if and (in $processableFormats $imgD.MediaType.SubType) (eq $prod true)}}
+                {{- if (not (and (not .imageHeight) (not .imageWidth))) }}
+                    {{- $imgD = $imgD.Resize (printf "%dx%d" .imageWidth .imageHeight) }}
+                {{- else if .imageHeight }}
+                    {{- $imgD = $imgD.Resize (printf "x%d" .imageHeight) }}
+                {{- else if .imageWidth }}
+                    {{- $imgD = $imgD.Resize (printf "%dx" .imageWidth) }}
+                {{- else }}
+                    {{- $imgD = $imgD.Resize "80x80" }}
+                {{- end }}
+            {{- end }}
+            <img class="home-info-logo logo-dark" draggable="false" src="{{ $imgD.Permalink }}" alt="{{ .imageTitle | default "logo" }}" title="{{ .imageTitle }}"
+                height="{{ .imageHeight | default 80 }}" width="{{ .imageWidth | default 80 }}" />
+        {{- else }}
+        <img class="home-info-logo logo-dark" draggable="false" src="{{ .imageUrlDark | absURL }}" alt="{{ .imageTitle | default "logo" }}" title="{{ .imageTitle }}"
+            height="{{ .imageHeight | default 80 }}" width="{{ .imageWidth | default 80 }}" />
+        {{- end }}
+        {{- end }}
+
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content md-content">
+        {{ $opts := dict "display" "block" }}
+        {{ .Content | $.Page.RenderString $opts }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}

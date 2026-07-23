@@ -1,0 +1,138 @@
+:root {
+    --gap: 24px;
+    --content-gap: 20px;
+    --nav-width: 1024px;
+    --main-width: 720px;
+    --header-height: 60px;
+    --footer-height: 60px;
+    --radius: 8px;
+    --theme: rgb(244, 236, 215);       /* cream background */
+    --entry: rgb(244, 236, 220);       /* cards/posts slightly lighter than bg */
+    --primary: rgb(20, 20, 20);        /* near-black text */
+    --secondary: rgb(90, 85, 70);      /* muted warm gray for dates/meta */
+    --tertiary: rgb(214, 200, 170);    /* soft border/divider tone */
+    --content: rgb(31, 31, 31);
+    --code-block-bg: rgb(28, 29, 33);
+    --code-bg: rgb(235, 225, 200);
+    --border: rgb(214, 200, 170);      /* was equal to --theme, now visible */
+    color-scheme: light;
+}
+:root[data-theme="dark"] {
+    --theme: rgb(0, 0, 0);             /* true black background */
+    --entry: rgb(21, 18, 28);          /* violet-tinted lift, matches card surface elsewhere */
+    --primary: rgb(244, 236, 215);     /* cream text */
+    --secondary: rgb(182, 173, 150);   /* warmed to match cream family, not flat gray */
+    --tertiary: rgb(46, 40, 57);       /* violet-tinted divider */
+    --content: rgb(220, 215, 200);
+    --code-block-bg: rgb(21, 18, 28);
+    --code-bg: rgb(34, 28, 45);        /* violet-tinted, was flat gray */
+    --border: rgb(46, 40, 57);
+    color-scheme: dark;
+}
+
+.list {
+    background: var(--theme);
+}
+[data-theme="dark"] .list {
+    background: var(--theme);
+}
+
+/* Brand accent — violet in light mode, green in dark mode */
+a,
+.entry-header a,
+.pagination a:hover,
+.social-icons a:hover {
+    color: rgb(106, 44, 247); /* violet */
+}
+[data-theme="dark"] a,
+[data-theme="dark"] .entry-header a {
+    color: rgb(122, 229, 79); /* green, pops on black */
+}
+
+/* Hover/accent states — split so green doesn't get overused in light mode */
+.post-entry:hover,
+.tag-entry:hover {
+    border-color: rgb(106, 44, 247); /* violet in light mode */
+}
+[data-theme="dark"] .post-entry:hover,
+[data-theme="dark"] .tag-entry:hover {
+    border-color: rgb(122, 229, 79); /* green in dark mode */
+}
+
+.logo-dark {
+    display: none;
+}
+[data-theme="dark"] .logo-light {
+    display: none;
+}
+[data-theme="dark"] .logo-dark {
+    display: inline;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype-variations'),
+       url('/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/InterVariable.ttf') format('truetype-variations'),
+       url('/fonts/InterVariable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/InterVariable-Italic.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Headings + nav + logo area: JetBrains Mono, for brand identity */
+h1, h2, h3, h4, h5, h6,
+.header-nav,
+.post-title,
+.entry-header {
+  font-family: 'JetBrains Mono', monospace, !important;
+}
+
+/* Body copy: proportional font for actual readability */
+body,
+.post-content p,
+.post-content li {
+  font-family: 'Inter', sans-serif, !important;
+}
+
+/* Code blocks: JetBrains Mono, obviously */
+code, pre {
+  font-family: 'JetBrains Mono', monospace, !important;
+}
+
+.home-info .entry-header,
+.home-info .entry-content,
+.home-info .entry-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.home-info-logo {
+  border-radius: var(--radius);
+}
