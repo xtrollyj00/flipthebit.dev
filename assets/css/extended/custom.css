@@ -103,24 +103,24 @@ a,
   font-display: swap;
 }
 
+/* Body copy: proportional font for actual readability */
+body,
+.post-content p,
+.post-content li {
+  font-family: 'Inter', sans-serif !important;
+}
+
 /* Headings + nav + logo area: JetBrains Mono, for brand identity */
 h1, h2, h3, h4, h5, h6,
 .header-nav,
 .post-title,
 .entry-header {
-  font-family: 'JetBrains Mono', monospace, !important;
-}
-
-/* Body copy: proportional font for actual readability */
-body,
-.post-content p,
-.post-content li {
-  font-family: 'Inter', sans-serif, !important;
+  font-family: 'JetBrains Mono', monospace !important;
 }
 
 /* Code blocks: JetBrains Mono, obviously */
 code, pre {
-  font-family: 'JetBrains Mono', monospace, !important;
+  font-family: 'JetBrains Mono', monospace !important;
 }
 
 .home-info .entry-header,
