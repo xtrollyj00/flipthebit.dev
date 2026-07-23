@@ -18,6 +18,7 @@ DefaultContentLanguage = "en"
   ShowShareButtons = true
   ShowBreadCrumbs = true
   ShareButtons = ["linkedin", "twitter", "reddit"]
+  images = ["images/twitter_card.png"]
   [params.contact]
     email = "flipthebit@proton.me"
 
