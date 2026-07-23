@@ -1,7 +1,7 @@
 baseURL = 'https://flipthebit.dev/'
 locale = 'en-us'
 title = 'Flip The Bit'
-copyright = "flipthebit.dev (CC BY-SA 4.0)"
+copyright = "flipthebit.dev (CC BY-NC-ND 4.0)"
 theme = "PaperMod"
 enableEmoji = true
 enableRobotsTXT = true
