@@ -1,0 +1,93 @@
+/* Background */
+.bg { color: var(--content); background-color: var(--code-block-bg); }
+/* PreWrapper */
+.chroma { color: var(--content); background-color: var(--code-block-bg); -webkit-text-size-adjust: none; }
+/* Error */
+.chroma .err { color: rgb(255, 100, 100); background-color: rgb(60, 10, 20); }
+/* LineLink */
+.chroma .lnlinks { outline: none; text-decoration: none; color: inherit; }
+/* LineTableTD */
+.chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */
+.chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */
+.chroma .hl { background-color: rgb(46, 40, 57); }
+/* LineNumbersTable */
+.chroma .lnt { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em; color: var(--secondary); }
+/* LineNumbers */
+.chroma .ln { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em; color: var(--secondary); }
+/* Line */
+.chroma .line { display: flex; }
+
+/* Keyword — your green, brand anchor */
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt { color: rgb(122, 229, 79); }
+.chroma .kn { color: rgb(106, 44, 247); } /* namespace keywords: violet instead */
+
+/* Names: attributes, classes, decorators, exceptions, other, tags — soft blue for readability */
+.chroma .na,
+.chroma .nc,
+.chroma .nd,
+.chroma .ne,
+.chroma .nx { color: rgb(140, 190, 255); }
+.chroma .nt { color: rgb(106, 44, 247); } /* tags: violet, matches operator tone below */
+
+/* Constants */
+.chroma .no { color: rgb(122, 229, 79); }
+
+/* Functions — violet, brand anchor */
+.chroma .nf,
+.chroma .fm { color: rgb(106, 44, 247); }
+
+/* Literals (generic) */
+.chroma .l { color: rgb(230, 160, 255); } /* light violet-pink, distinct from pure violet */
+
+/* Strings — warm amber, complements cream */
+.chroma .ld,
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1,
+.chroma .ss { color: rgb(230, 200, 130); }
+.chroma .se { color: rgb(230, 160, 255); } /* string escapes: light violet-pink, stands out within strings */
+
+/* Numbers — violet, brand anchor */
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo { color: rgb(106, 44, 247); }
+
+/* Operators — violet, ties to numbers/tags */
+.chroma .o,
+.chroma .ow { color: rgb(220, 185, 170); } /* soft cream-gray, subtle but present */
+
+/* Comments — muted secondary tone, italic */
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf { color: var(--secondary); font-style: italic; }
+
+/* Generic diff-style tokens */
+.chroma .gd { color: rgb(255, 100, 100); } /* deleted: red */
+.chroma .ge { font-style: italic; }
+.chroma .gi { color: rgb(122, 229, 79); } /* inserted: green */
+.chroma .gs { font-weight: bold; }
+.chroma .gu { color: var(--secondary); }
