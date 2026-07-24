@@ -135,4 +135,6 @@ code, pre {
 
 .home-info-logo {
   border-radius: var(--radius);
+  max-width: 100%;
+  height: auto;
 }
