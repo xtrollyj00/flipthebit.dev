@@ -71,8 +71,8 @@ a,
 
 @font-face {
   font-family: 'JetBrains Mono';
-  src: url('/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype-variations'),
-       url('/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+  src: url('/fonts/JetBrainsMono-VariableFont_wght.woff2') format('woff2-variations'),
+       url('/fonts/JetBrainsMono-VariableFont_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -80,7 +80,8 @@ a,
 
 @font-face {
   font-family: 'JetBrains Mono';
-  src: url('/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  src: url('/fonts/JetBrainsMono-Italic-VariableFont_wght.woff2') format('woff2-variations'),
+       url('/fonts/JetBrainsMono-Italic-VariableFont_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -88,8 +89,8 @@ a,
 
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/InterVariable.ttf') format('truetype-variations'),
-       url('/fonts/InterVariable.ttf') format('truetype');
+  src: url('/fonts/InterVariable.woff2') format('woff2-variations'),
+       url('/fonts/InterVariable.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -97,7 +98,8 @@ a,
 
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/InterVariable-Italic.ttf') format('truetype-variations');
+  src: url('/fonts/InterVariable-Italic.woff2') format('woff2-variations'),
+       url('/fonts/InterVariable-Italic.woff2') format('woff2');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
